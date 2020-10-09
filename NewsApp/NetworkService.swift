@@ -15,41 +15,40 @@ class NetworkService {
     
     private init() {}
     
-    func searchEverythingByTitle(title: String, completion: @escaping (Result<[Article], Error>) -> Void) {
+    func searchEverythingByTitle(title: String, completion: @escaping (Result<[Article], NewsError>) -> Void) {
         
         let urlString = "\(base)everything?q=\(title)&apiKey=\(Secrets.apiKey)"
         
-        guard let url = URL(string: urlString) else { return }
+        guard let url = URL(string: urlString) else {
+            completion(.failure(.invalidRetrieval))
+            return
+        }
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
-                print(error.localizedDescription)
+                completion(.failure(.unableToComplete))
             }
             
             guard let httpResponse = response as? HTTPURLResponse,  (200...299).contains(httpResponse.statusCode) else {
-                print("Invalid response!")
+                completion(.failure(.invalidResponse))
                 return
             }
             
             guard let data = data else {
-                print("No data was retrieved!")
+                completion(.failure(.invalidData))
                 return
             }
             
             do {
-               let decoder = JSONDecoder()
-                   decoder.keyDecodingStrategy = .convertFromSnakeCase
-             
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                
                 let response = try decoder.decode(Response.self, from: data)
-                print(response.articles)
-                for article in response.articles {
-                   // print(article)
-                }
-       
-              
-           
+                
+                completion(.success(response.articles))
+                
             } catch let error {
-                print(error.localizedDescription)
+                completion(.failure(.invalidData))
             }
             
         }

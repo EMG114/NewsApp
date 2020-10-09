@@ -18,6 +18,7 @@
 		07E4E50C2530EE910099C472 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E4E50B2530EE910099C472 /* Response.swift */; };
 		07E4E5132530F0890099C472 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E4E5122530F0890099C472 /* NetworkService.swift */; };
 		07E4E5162530F11B0099C472 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E4E5152530F11B0099C472 /* Secrets.swift */; };
+		07E4E51B2530FB910099C472 /* NewsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E4E51A2530FB910099C472 /* NewsError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		07E4E50B2530EE910099C472 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		07E4E5122530F0890099C472 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		07E4E5152530F11B0099C472 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		07E4E51A2530FB910099C472 /* NewsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				07E4E50B2530EE910099C472 /* Response.swift */,
 				07E4E5122530F0890099C472 /* NetworkService.swift */,
 				07E4E5152530F11B0099C472 /* Secrets.swift */,
+				07E4E51A2530FB910099C472 /* NewsError.swift */,
 			);
 			path = NewsApp;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07E4E5062530EDB00099C472 /* Article.swift in Sources */,
+				07E4E51B2530FB910099C472 /* NewsError.swift in Sources */,
 				07E4E5162530F11B0099C472 /* Secrets.swift in Sources */,
 				07E4E4F52530EB4F0099C472 /* ViewController.swift in Sources */,
 				07E4E4F12530EB4F0099C472 /* AppDelegate.swift in Sources */,
