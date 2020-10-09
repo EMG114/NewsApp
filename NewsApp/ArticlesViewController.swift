@@ -11,6 +11,8 @@ class ArticlesViewController: UIViewController {
     
     var articles: [Article] = []
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -27,6 +29,21 @@ class ArticlesViewController: UIViewController {
         print(articles)
     }
 
+}
+
+extension ArticlesViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return articles.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell") as? ArticleTableViewCell else { return UITableViewCell() }
+        let article = articles[indexPath.row]
+        cell.configureArticleCell(article: article)
+        return cell
+    }
+    
+    
 }
 
 
