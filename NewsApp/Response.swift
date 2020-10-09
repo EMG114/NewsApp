@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Response {
+struct Response: Codable {
     let status: String
     let totalResults: Int
     let articles:[Article]

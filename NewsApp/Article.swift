@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Article {
+struct Article: Codable {
     let source: Source
     let author: String?
     var title: String
