@@ -18,10 +18,11 @@ class ArticlesViewController: UIViewController {
         // Do any additional setup after loading the view.
         tableView.dataSource = self
         tableView.delegate = self
-       fetchArticles()
+    //   fetchArticles()
+       fethTopHeadlines()
     }
     
-    func fetchArticles() {
+    func fetchArticlesByTitle() {
         NetworkService.shared.searchEverythingByTitle(title: "bitcoin") { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -37,6 +38,26 @@ class ArticlesViewController: UIViewController {
             }
         }
     }
+    
+    func fethTopHeadlines() {
+        NetworkService.shared.searchTopHeadlines { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let articles):
+                DispatchQueue.main.async {
+            
+                self.articles = articles
+                print(self.articles)
+                self.tableView.reloadData()
+                }
+            case .failure(let error):
+                print("Error \(error)")
+            }
+        }
+        
+    }
+    
+    
 
 }
 

@@ -30,7 +30,7 @@ class ArticleTableViewCell: UITableViewCell {
     
     
     func configureArticleCell( article: Article) {
-        self.imageView?.image = UIImage(contentsOfFile: article.urlToImage!)
+        //self.imageView?.image = UIImage(contentsOfFile: article.urlToImage!)
         self.titleArticle.text = article.title
         self.descriptionArticle.text = article.articleDescription
         self.datePublished.text = article.publishedAt
