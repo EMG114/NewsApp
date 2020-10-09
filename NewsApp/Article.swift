@@ -9,7 +9,7 @@
 import UIKit
 
 struct Article {
-   // let source: Source
+    let source: Source
     let author: String?
     var title: String
     var articleDescription: String?
