@@ -16,17 +16,26 @@ class ArticlesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        tableView.dataSource = self
+        tableView.delegate = self
+       fetchArticles()
+    }
+    
+    func fetchArticles() {
         NetworkService.shared.searchEverythingByTitle(title: "bitcoin") { [weak self] result in
             guard let self = self else { return }
-            
             switch result {
             case .success(let articles):
-                self.articles.append(contentsOf: articles)
+                DispatchQueue.main.async {
+            
+                self.articles = articles
+                print(self.articles)
+                self.tableView.reloadData()
+                }
             case .failure(let error):
                 print("Error \(error)")
             }
         }
-        print(articles)
     }
 
 }
@@ -43,7 +52,10 @@ extension ArticlesViewController: UITableViewDataSource {
         return cell
     }
     
-    
+}
+
+extension ArticlesViewController: UITableViewDelegate {
+  
 }
 
 
