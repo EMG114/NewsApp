@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		07E4E4F12530EB4F0099C472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E4E4F02530EB4F0099C472 /* AppDelegate.swift */; };
 		07E4E4F32530EB4F0099C472 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E4E4F22530EB4F0099C472 /* SceneDelegate.swift */; };
-		07E4E4F52530EB4F0099C472 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E4E4F42530EB4F0099C472 /* ViewController.swift */; };
+		07E4E4F52530EB4F0099C472 /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E4E4F42530EB4F0099C472 /* ArticlesViewController.swift */; };
 		07E4E4F82530EB4F0099C472 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07E4E4F62530EB4F0099C472 /* Main.storyboard */; };
 		07E4E4FA2530EB510099C472 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07E4E4F92530EB510099C472 /* Assets.xcassets */; };
 		07E4E4FD2530EB510099C472 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07E4E4FB2530EB510099C472 /* LaunchScreen.storyboard */; };
@@ -19,13 +19,14 @@
 		07E4E5132530F0890099C472 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E4E5122530F0890099C472 /* NetworkService.swift */; };
 		07E4E5162530F11B0099C472 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E4E5152530F11B0099C472 /* Secrets.swift */; };
 		07E4E51B2530FB910099C472 /* NewsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E4E51A2530FB910099C472 /* NewsError.swift */; };
+		07E4E51E253103C70099C472 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E4E51D253103C70099C472 /* ArticleTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		07E4E4ED2530EB4F0099C472 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07E4E4F02530EB4F0099C472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07E4E4F22530EB4F0099C472 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		07E4E4F42530EB4F0099C472 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		07E4E4F42530EB4F0099C472 /* ArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
 		07E4E4F72530EB4F0099C472 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		07E4E4F92530EB510099C472 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07E4E4FC2530EB510099C472 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +37,7 @@
 		07E4E5122530F0890099C472 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		07E4E5152530F11B0099C472 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		07E4E51A2530FB910099C472 /* NewsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsError.swift; sourceTree = "<group>"; };
+		07E4E51D253103C70099C472 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +73,8 @@
 				07E4E4F02530EB4F0099C472 /* AppDelegate.swift */,
 				07E4E4F22530EB4F0099C472 /* SceneDelegate.swift */,
 				07E4E5052530EDB00099C472 /* Article.swift */,
-				07E4E4F42530EB4F0099C472 /* ViewController.swift */,
+				07E4E51D253103C70099C472 /* ArticleTableViewCell.swift */,
+				07E4E4F42530EB4F0099C472 /* ArticlesViewController.swift */,
 				07E4E4F62530EB4F0099C472 /* Main.storyboard */,
 				07E4E4F92530EB510099C472 /* Assets.xcassets */,
 				07E4E4FB2530EB510099C472 /* LaunchScreen.storyboard */,
@@ -155,10 +158,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07E4E51E253103C70099C472 /* ArticleTableViewCell.swift in Sources */,
 				07E4E5062530EDB00099C472 /* Article.swift in Sources */,
 				07E4E51B2530FB910099C472 /* NewsError.swift in Sources */,
 				07E4E5162530F11B0099C472 /* Secrets.swift in Sources */,
-				07E4E4F52530EB4F0099C472 /* ViewController.swift in Sources */,
+				07E4E4F52530EB4F0099C472 /* ArticlesViewController.swift in Sources */,
 				07E4E4F12530EB4F0099C472 /* AppDelegate.swift in Sources */,
 				07E4E5092530EE360099C472 /* Source.swift in Sources */,
 				07E4E50C2530EE910099C472 /* Response.swift in Sources */,

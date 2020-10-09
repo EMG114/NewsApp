@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ArticlesViewController: UIViewController {
     
     var articles: [Article] = []
 
@@ -28,4 +28,7 @@ class ViewController: UIViewController {
     }
 
 }
+
+
+
 
