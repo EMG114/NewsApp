@@ -9,6 +9,12 @@ import UIKit
 
 class SectionCollectionViewController: UIViewController {
     
+    enum Segment {
+        case topHeadlines
+        case sources
+    }
+    
+
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -28,7 +34,7 @@ extension SectionCollectionViewController: UICollectionViewDelegate, UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+      return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

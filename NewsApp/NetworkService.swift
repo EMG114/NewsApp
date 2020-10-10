@@ -5,7 +5,7 @@
 //  Created by Erica on 10/9/20.
 //
 
-import Foundation
+import UIKit
 
 enum Category: String, CaseIterable {
     case business, entertainment, general, health, science, sports, technology
@@ -100,5 +100,35 @@ class NetworkService {
         }
         task.resume()
     }
+    
+    
+    func getImage(urlString: String, completion: @escaping (UIImage?) -> Void) {
+        
+        guard let url = URL(string: urlString) else {
+                 return
+             }
+             
+             let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+                 guard let self = self else { return }
+                 if error != nil { return }
+                 guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                 //   completion(.failure(.invalidResponse))
+                    return
+                 }
+                 guard let data = data else {
+                  //  completion(.failure(.invalidRetrieval))
+                    return
+                 }
+                 
+                 guard let image = UIImage(data: data) else {
+                  //  completion(.failure(.invalidData))
+                    return
+                 }
+                completion(image)
+         
+             }
+             task.resume()
+         }
+    
     
 }
