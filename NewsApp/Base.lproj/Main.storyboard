@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sDV-bd-Ykw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wel-rX-Gy7">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -110,17 +111,48 @@
             </objects>
             <point key="canvasLocation" x="-867" y="37"/>
         </scene>
-        <!--View Controller-->
+        <!--Section Collection View Controller-->
         <scene sceneID="g4u-de-zYf">
             <objects>
-                <viewController id="Vyb-Mo-j7Z" sceneMemberID="viewController">
+                <viewController id="Vyb-Mo-j7Z" customClass="SectionCollectionViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="77q-12-sfM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gr7-Jf-8nT">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="y00-4Q-mk9">
+                                    <size key="itemSize" width="176" height="162"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="SectionCell" id="4bP-7y-V83" customClass="SectionCollectionViewCell" customModule="NewsApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="176" height="162"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bhD-Iy-qfb">
+                                            <rect key="frame" x="0.0" y="0.0" width="176" height="162"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" red="0.98039215690000003" green="0.1450980392" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="NHz-ps-QIl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gr7-Jf-8nT" firstAttribute="bottom" secondItem="NHz-ps-QIl" secondAttribute="bottom" id="4sg-BU-efu"/>
+                            <constraint firstItem="gr7-Jf-8nT" firstAttribute="top" secondItem="NHz-ps-QIl" secondAttribute="top" id="UWD-VU-ILY"/>
+                            <constraint firstItem="gr7-Jf-8nT" firstAttribute="leading" secondItem="NHz-ps-QIl" secondAttribute="leading" id="cR5-rN-hAh"/>
+                            <constraint firstItem="gr7-Jf-8nT" firstAttribute="trailing" secondItem="NHz-ps-QIl" secondAttribute="trailing" id="jHb-Mp-mdA"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="A4u-8O-XTr"/>
+                    <connections>
+                        <outlet property="collectionView" destination="gr7-Jf-8nT" id="rig-ec-36m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="569-D0-QjE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
