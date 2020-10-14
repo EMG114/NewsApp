@@ -20,8 +20,6 @@ class ArticleTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-     
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -34,14 +32,10 @@ class ArticleTableViewCell: UITableViewCell {
     func configureArticleCell( article: Article) {
 
         guard let imageUrl = article.urlToImage else { return }
-        NetworkService.shared.getImage(urlString: imageUrl) { [weak self ] result in
+        NetworkService.shared.getImage(urlString: imageUrl) { [weak self] result in
             DispatchQueue.main.async {
-                print("*************")
                 self?.imageArticle.image = result
             }
-            
-            
-
         }
    
         self.titleArticle.text = article.title

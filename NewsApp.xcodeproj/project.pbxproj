@@ -55,6 +55,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0792C62D25368D2700B40378 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0792C62E25368D3800B40378 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		0792C62F25368D4500B40378 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		07E4E4E42530EB4F0099C472 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +95,9 @@
 		07E4E4EF2530EB4F0099C472 /* NewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				0792C62F25368D4500B40378 /* View */,
+				0792C62E25368D3800B40378 /* View Controller */,
+				0792C62D25368D2700B40378 /* Model */,
 				07E4E4F02530EB4F0099C472 /* AppDelegate.swift */,
 				07E4E4F22530EB4F0099C472 /* SceneDelegate.swift */,
 				07E4E5052530EDB00099C472 /* Article.swift */,
