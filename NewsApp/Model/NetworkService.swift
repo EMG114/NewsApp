@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum Category: String, CaseIterable {
+enum CategoryNews: String, CaseIterable {
     case business, entertainment, general, health, science, sports, technology
 }
 
@@ -60,7 +60,7 @@ class NetworkService {
         task.resume()
     }
     
-    func searchTopHeadlinesByCategory(category: String, completion: @escaping (Result<[Article], NewsError>) -> Void) {
+    func searchTopHeadlinesByCategory(category: CategoryNews, completion: @escaping (Result<[Article], NewsError>) -> Void) {
         
         let urlString = "\(base)top-headlines?category=\(category)&country=us&apiKey=\(Secrets.apiKey)"
         
@@ -108,27 +108,23 @@ class NetworkService {
             return
         }
         
-        let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
-            guard let self = self else { return }
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            
             if error != nil { return }
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                //   completion(.failure(.invalidResponse))
-                return
+                fatalError("Bad Response!")
             }
             guard let data = data else {
-                //  completion(.failure(.invalidRetrieval))
-                return
+                fatalError("Error getting data!")
             }
             
             guard let image = UIImage(data: data) else {
-                //  completion(.failure(.invalidData))
-                return
+                fatalError("Error getting the image!")
             }
             completion(image)
             
         }
         task.resume()
     }
-    
     
 }

@@ -79,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				07E4E51D253103C70099C472 /* ArticleTableViewCell.swift */,
+				07A1BCBB25313170001ADF7C /* SectionCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -118,7 +119,6 @@
 				07E4E4F02530EB4F0099C472 /* AppDelegate.swift */,
 				07E4E4F22530EB4F0099C472 /* SceneDelegate.swift */,
 				07E4E4F62530EB4F0099C472 /* Main.storyboard */,
-				07A1BCBB25313170001ADF7C /* SectionCollectionViewCell.swift */,
 				07E4E4F92530EB510099C472 /* Assets.xcassets */,
 				07E4E4FB2530EB510099C472 /* LaunchScreen.storyboard */,
 				07E4E4FE2530EB510099C472 /* Info.plist */,

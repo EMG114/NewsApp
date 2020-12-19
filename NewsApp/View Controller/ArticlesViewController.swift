@@ -10,16 +10,16 @@ import UIKit
 class ArticlesViewController: UIViewController {
     
     var articles: [Article] = []
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
         tableView.dataSource = self
         tableView.delegate = self
-      fetchArticlesByTitle()
-     //  fethTopHeadlines()
+        fetchArticlesByTitle()
+        
     }
     
     func fetchArticlesByTitle() {
@@ -28,10 +28,10 @@ class ArticlesViewController: UIViewController {
             switch result {
             case .success(let articles):
                 DispatchQueue.main.async {
-            
-                self.articles = articles
-                print(self.articles)
-                self.tableView.reloadData()
+                    
+                    self.articles = articles
+                    print(self.articles)
+                    self.tableView.reloadData()
                 }
             case .failure(let error):
                 print("Error \(error)")
@@ -39,26 +39,6 @@ class ArticlesViewController: UIViewController {
         }
     }
     
-//    func fethTopHeadlines() {
-//        NetworkService.shared.searchTopHeadlinesByCategory(category) { [weak self] result in
-//            guard let self = self else { return }
-//            switch result {
-//            case .success(let articles):
-//                DispatchQueue.main.async {
-//
-//                self.articles = articles
-//                print(self.articles)
-//                self.tableView.reloadData()
-//                }
-//            case .failure(let error):
-//                print("Error \(error)")
-//            }
-//        }
-//
-//    }
-    
-    
-
 }
 
 extension ArticlesViewController: UITableViewDataSource {
@@ -76,7 +56,7 @@ extension ArticlesViewController: UITableViewDataSource {
 }
 
 extension ArticlesViewController: UITableViewDelegate {
-  
+    
 }
 
 

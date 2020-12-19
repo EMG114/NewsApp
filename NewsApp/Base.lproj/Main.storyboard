@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wel-rX-Gy7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wel-rX-Gy7">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArticleCell" rowHeight="296" id="rwU-ZW-QCo" customClass="ArticleTableViewCell" customModule="NewsApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArticleCell" rowHeight="296" id="rwU-ZW-QCo" customClass="ArticleTableViewCell" customModule="NewsApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="296"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rwU-ZW-QCo" id="h5b-hk-nuB">
@@ -59,7 +59,7 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Wrr-Fs-GEM" secondAttribute="bottom" constant="4" id="3fc-JR-jsF"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Wrr-Fs-GEM" secondAttribute="bottom" constant="4" id="3fc-JR-jsF" userLabel="bottom = Stack View.bottom + 4"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Wrr-Fs-GEM" secondAttribute="trailing" constant="2" id="FUO-BT-041"/>
                                                 <constraint firstAttribute="trailing" secondItem="xn1-Bi-KZG" secondAttribute="trailing" id="KUk-q3-93I"/>
                                                 <constraint firstItem="Wrr-Fs-GEM" firstAttribute="leading" secondItem="h5b-hk-nuB" secondAttribute="leadingMargin" constant="2" id="X4S-qw-9tb"/>
@@ -79,7 +79,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray2Color"/>
                         <constraints>
                             <constraint firstItem="GXJ-3T-eJ1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="AkV-LB-Nce"/>
                             <constraint firstItem="GXJ-3T-eJ1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Y0U-dE-2EW"/>
@@ -124,27 +124,68 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gr7-Jf-8nT">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="y00-4Q-mk9">
-                                    <size key="itemSize" width="176" height="162"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7yo-Oj-lnt">
+                                    <size key="itemSize" width="285" height="241"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="SectionCell" id="4bP-7y-V83" customClass="SectionCollectionViewCell" customModule="NewsApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="176" height="162"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="SectionCollectionViewCell" id="4bP-7y-V83" customClass="SectionCollectionViewCell" customModule="NewsApp" customModuleProvider="target">
+                                        <rect key="frame" x="64.5" y="50" width="285" height="241"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bhD-Iy-qfb">
-                                            <rect key="frame" x="0.0" y="0.0" width="176" height="162"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="285" height="241"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BEE-rq-9Mc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="285" height="172"/>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RDp-AS-LIj">
+                                                    <rect key="frame" x="8" y="182" width="269" height="49"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWw-D5-TbT">
+                                                            <rect key="frame" x="0.0" y="0.0" width="269" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xC6-0d-48W">
+                                                            <rect key="frame" x="0.0" y="28.5" width="269" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="BEE-rq-9Mc" firstAttribute="leading" secondItem="bhD-Iy-qfb" secondAttribute="leading" id="5vn-4d-dND"/>
+                                                <constraint firstItem="BEE-rq-9Mc" firstAttribute="top" secondItem="bhD-Iy-qfb" secondAttribute="top" id="GAw-fQ-uP2"/>
+                                                <constraint firstAttribute="trailing" secondItem="BEE-rq-9Mc" secondAttribute="trailing" id="KTy-d8-15b"/>
+                                                <constraint firstAttribute="trailing" secondItem="RDp-AS-LIj" secondAttribute="trailing" constant="8" id="O6v-Kc-J62"/>
+                                                <constraint firstItem="RDp-AS-LIj" firstAttribute="leading" secondItem="bhD-Iy-qfb" secondAttribute="leading" constant="8" id="Sdl-wd-gks"/>
+                                                <constraint firstAttribute="bottom" secondItem="RDp-AS-LIj" secondAttribute="bottom" constant="10" id="TaI-qc-ebj"/>
+                                                <constraint firstItem="RDp-AS-LIj" firstAttribute="top" secondItem="BEE-rq-9Mc" secondAttribute="bottom" constant="10" id="gfF-bF-GhN"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" red="0.98039215690000003" green="0.1450980392" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <size key="customSize" width="285" height="241"/>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="xC6-0d-48W" id="h7c-1o-edP"/>
+                                            <outlet property="imageNews" destination="BEE-rq-9Mc" id="p78-sF-b3X"/>
+                                            <outlet property="titleLabel" destination="fWw-D5-TbT" id="xi2-iX-auS"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PYO-Pd-r1C">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NHz-ps-QIl"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray2Color"/>
                         <constraints>
                             <constraint firstItem="gr7-Jf-8nT" firstAttribute="bottom" secondItem="NHz-ps-QIl" secondAttribute="bottom" id="4sg-BU-efu"/>
                             <constraint firstItem="gr7-Jf-8nT" firstAttribute="top" secondItem="NHz-ps-QIl" secondAttribute="top" id="UWD-VU-ILY"/>
@@ -203,6 +244,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
